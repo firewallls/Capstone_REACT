@@ -10,7 +10,9 @@ import {
     SidebarMenuButton,
     SidebarFooter,
     SidebarTrigger,
+    SidebarInset,
 } from "@/components/ui/sidebar";
+
 import {
     LayoutDashboard,
     CalendarCheck,
@@ -18,12 +20,23 @@ import {
     GraduationCap,
     MonitorPlay,
     Settings,
-    ChevronRight,
 } from "lucide-react";
 import { HeaderBranding } from "@/components/HeaderBranding.jsx";
 import { FooterBranding } from "@/components/FooterBranding.jsx";
+import { NavLink, Outlet } from "react-router";
+
+const menuItems = [
+    { icon: LayoutDashboard, label: "Dashboard", path: "/" },
+    { icon: CalendarCheck, label: "Attendance", path: "/attendance" },
+    { icon: BookOpenCheck, label: "Marks", path: "/marks" },
+    { icon: GraduationCap, label: "Learning", path: "/learning" },
+    { icon: MonitorPlay, label: "Platforms", path: "/platforms" },
+    { icon: Settings, label: "Settings", path: "/settings" },
+];
 
 function Layout() {
+
+
     return (
         <SidebarProvider>
             <Sidebar collapsible="icon">
@@ -37,20 +50,16 @@ function Layout() {
                     <SidebarGroup>
                         <SidebarGroupContent>
                             <SidebarMenu>
-                                {[
-                                    { icon: LayoutDashboard, label: "Dashboard" },
-                                    { icon: CalendarCheck, label: "Attendance" },
-                                    { icon: BookOpenCheck, label: "Marks" },
-                                    { icon: GraduationCap, label: "Learning" },
-                                    { icon: MonitorPlay, label: "Platforms" },
-                                    { icon: Settings, label: "Settings" },
-                                ].map(({ icon: Icon, label }) => (
+                                {menuItems.map(({ icon: Icon, label, path }) => (
                                     <SidebarMenuItem key={label}>
-                                        <SidebarMenuButton asChild>
-                                            <a href="#">
+                                        <SidebarMenuButton
+                                            asChild
+                                            isActive={location.pathname === path}
+                                        >
+                                            <NavLink to={path}>
                                                 <Icon className="h-4 w-4" />
                                                 <span>{label}</span>
-                                            </a>
+                                            </NavLink>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
                                 ))}
@@ -64,6 +73,9 @@ function Layout() {
                     <FooterBranding />
                 </SidebarFooter>
             </Sidebar>
+            <SidebarInset className="flex-1 p-6">
+                <Outlet />   {/* ← Route pages render here */}
+            </SidebarInset>
         </SidebarProvider>
     );
 }
