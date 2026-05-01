@@ -1,3 +1,4 @@
+import { useLocation, NavLink, Outlet } from "react-router";
 import {
     SidebarProvider,
     Sidebar,
@@ -23,7 +24,7 @@ import {
 } from "lucide-react";
 import { HeaderBranding } from "@/components/HeaderBranding.jsx";
 import { FooterBranding } from "@/components/FooterBranding.jsx";
-import { NavLink, Outlet } from "react-router";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/" },
@@ -35,15 +36,15 @@ const menuItems = [
 ];
 
 function Layout() {
-
+    const location = useLocation();
 
     return (
         <SidebarProvider>
+            {/* Desktop sidebar – hidden off‑canvas on mobile */}
             <Sidebar collapsible="icon">
-                {/* Header: trigger always visible, branding only when expanded */}
                 <SidebarHeader className="flex flex-row items-center gap-2 p-2">
                     <HeaderBranding />
-                    <SidebarTrigger className={"ml-auto"} />
+                    <SidebarTrigger className="ml-auto" />
                 </SidebarHeader>
 
                 <SidebarContent>
@@ -68,13 +69,23 @@ function Layout() {
                     </SidebarGroup>
                 </SidebarContent>
 
-                {/* Footer: small logo always visible, text only when expanded */}
                 <SidebarFooter>
                     <FooterBranding />
                 </SidebarFooter>
             </Sidebar>
-            <SidebarInset className="flex-1 p-6">
-                <Outlet />   {/* ← Route pages render here */}
+
+            {/* Main content area – visible on all screen sizes */}
+            <SidebarInset className="flex-1">
+                {/* Mobile header with trigger + theme toggle */}
+                <header className="flex items-center justify-between p-2 md:hidden">
+                    <SidebarTrigger />
+                    <ModeToggle />
+                </header>
+
+                {/* Page content */}
+                <div className="p-6 pt-2">
+                    <Outlet />
+                </div>
             </SidebarInset>
         </SidebarProvider>
     );

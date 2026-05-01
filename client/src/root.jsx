@@ -1,10 +1,5 @@
-import {
-    Links,
-    Meta,
-    Outlet,
-    Scripts,
-    ScrollRestoration,
-} from "react-router";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {ThemeProvider} from "./components/theme-provider.jsx";
 
 export function Layout({ children }) {
     return (
@@ -17,9 +12,9 @@ export function Layout({ children }) {
             <Links />
         </head>
         <body>
-        <div id="root">
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             {children}
-        </div>
+        </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
         </body>
@@ -27,7 +22,6 @@ export function Layout({ children }) {
     );
 }
 
-// This component is the root route – it renders your actual app layout
 export default function Root() {
     return <Outlet />;
 }

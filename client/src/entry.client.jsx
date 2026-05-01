@@ -1,10 +1,11 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { HydratedRouter } from "react-router/dom";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css"; // your global styles
+import "./index.css";
 
-createRoot(document.getElementById("root")).render(
-    <StrictMode>
+ReactDOM.hydrateRoot(
+    document,
+    <React.StrictMode>
         <HydratedRouter />
-    </StrictMode>
+    </React.StrictMode>
 );
