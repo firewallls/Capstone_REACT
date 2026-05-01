@@ -1,10 +1,9 @@
-function App() {
+import Layout from "./components/app/layout.jsx";
 
+function App() {
     return (
-            <div>
-                Running
-            </div>
-        )
-    }
+        <Layout/>
+    )
+}
 
 export default App;
