@@ -1,0 +1,1 @@
+import{A as e,t}from"./jsx-runtime-B1ED24tF.js";var n=t(),r=e(function(){return(0,n.jsx)(`h1`,{className:`text-2xl font-bold`,children:`Platforms`})});export{r as default};

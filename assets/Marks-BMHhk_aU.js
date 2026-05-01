@@ -1,1 +1,0 @@
-import{k as e,t}from"./jsx-runtime-DrmpnR7v.js";var n=t(),r=e(function(){return(0,n.jsx)(`h1`,{className:`text-2xl font-bold`,children:`Marks`})});export{r as default};

@@ -1,1 +1,0 @@
-import{c as e,k as t,t as n}from"./jsx-runtime-DrmpnR7v.js";var r=n(),i=t(function(){let t=new URLSearchParams(window.location.search).get(`p`);return t?(0,r.jsx)(e,{to:t.replace(`/Capstone_REACT`,``)||`/`,replace:!0}):(0,r.jsx)(e,{to:`/`,replace:!0})});export{i as default};
