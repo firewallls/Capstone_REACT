@@ -6,6 +6,7 @@ import {
 
 export default [
     // Layout route – wraps all child routes with AppLayout (sidebar)
+    route("/", "./pages/RedirectHandler.jsx"),
     layout("./components/app/layout.jsx", [
         index("./pages/Dashboard.jsx"),               // "/"
         route("attendance", "./pages/Attendance.jsx"),
