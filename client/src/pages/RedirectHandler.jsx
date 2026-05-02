@@ -1,11 +1,13 @@
-import { Navigate } from "react-router";
+import { Navigate, useSearchParams } from "react-router";
 
 export default function RedirectHandler() {
-    const params = new URLSearchParams(window.location.search);
-    const redirect = params.get("p");
+    const [searchParams] = useSearchParams();
+    const redirect = searchParams.get("p");
+    
     if (redirect) {
         const newPath = redirect.replace("/Capstone_REACT", "") || "/";
         return <Navigate to={newPath} replace />;
     }
+    
     return <Navigate to="/" replace />;
 }

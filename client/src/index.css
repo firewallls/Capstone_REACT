@@ -46,6 +46,14 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
+
+    --shadow-glow: 0 0 15px -3px var(--color-primary), 0 0 6px -2px var(--color-primary);
+    
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 1; filter: brightness(1.2) drop-shadow(0 0 5px var(--color-destructive)); }
+      50% { opacity: 0.7; filter: brightness(0.9) drop-shadow(0 0 2px var(--color-destructive)); }
+    }
+    --animate-pulse-glow: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 :root {

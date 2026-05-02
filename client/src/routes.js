@@ -5,14 +5,14 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
-    // Layout route – wraps all child routes with AppLayout (sidebar)
-    route("/", "./pages/RedirectHandler.jsx"),
     layout("./components/app/layout.jsx", [
-        index("./pages/Dashboard.jsx"),               // "/"
+        index("./pages/Dashboard.jsx"),
         route("attendance", "./pages/Attendance.jsx"),
         route("marks", "./pages/Marks.jsx"),
         route("learning", "./pages/Learning.jsx"),
         route("platforms", "./pages/Platforms.jsx"),
         route("settings", "./pages/Settings.jsx"),
     ]),
+    // Catch-all to handle GitHub Pages redirects
+    route("*", "./pages/RedirectHandler.jsx"),
 ];
