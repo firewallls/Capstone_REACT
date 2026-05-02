@@ -1,1 +1,0 @@
-import{A as e,c as t,t as n}from"./jsx-runtime-B1ED24tF.js";var r=n(),i=e(function(){let e=new URLSearchParams(window.location.search).get(`p`);return e?(0,r.jsx)(t,{to:e.replace(`/Capstone_REACT`,``)||`/`,replace:!0}):(0,r.jsx)(t,{to:`/`,replace:!0})});export{i as default};
