@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Redirecting…</title>
     <script>
-        // Redirect to the app's base path, preserving the query string and hash
         sessionStorage.redirect = location.href;
         location.replace('/Capstone_REACT/' + location.search + location.hash);
     </script>

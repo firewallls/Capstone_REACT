@@ -73,7 +73,7 @@ function Layout() {
                     <FooterBranding />
                 </SidebarFooter>
             </Sidebar>
-
+            <ModeToggle />
             {/* Main content area – visible on all screen sizes */}
             <SidebarInset className="flex-1">
                 {/* Mobile header with trigger + theme toggle */}
