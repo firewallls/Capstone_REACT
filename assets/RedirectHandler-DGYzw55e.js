@@ -1,1 +1,0 @@
-import{A as e,c as t,j as n,t as r}from"./jsx-runtime-g8il-Rv0.js";var i=r(),a=n(function(){let[n]=e(),r=n.get(`p`);return r?(0,i.jsx)(t,{to:r.replace(`/Capstone_REACT`,``)||`/`,replace:!0}):(0,i.jsx)(t,{to:`/`,replace:!0})});export{a as default};
