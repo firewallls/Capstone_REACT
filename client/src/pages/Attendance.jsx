@@ -2,16 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import { CalendarCheck, Filter } from "lucide-react";
 import { AttendanceCard } from "@/components/dashboard/AttendanceCard";
 import { StatTile } from "@/components/dashboard/StatTile";
-import { subjects } from "@/data/mock";
+import { subjects , filters} from "@/data/mock";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
-
-const filters = [
-  { id: "all", label: "All", cls: "data-[active=true]:bg-primary/15 data-[active=true]:text-primary data-[active=true]:border-primary/30" },
-  { id: "newton", label: "Newton", cls: "data-[active=true]:bg-violet-500/15 data-[active=true]:text-violet-500 data-[active=true]:border-violet-500/30" },
-  { id: "rishiverse", label: "Rishiverse", cls: "data-[active=true]:bg-emerald-500/15 data-[active=true]:text-emerald-500 data-[active=true]:border-emerald-500/30" },
-  { id: "canvas", label: "Canvas", cls: "data-[active=true]:bg-blue-500/15 data-[active=true]:text-blue-500 data-[active=true]:border-blue-500/30" },
-];
 
 export default function Attendance() {
   const [filter, setFilter] = useState("all");

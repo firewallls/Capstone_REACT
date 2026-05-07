@@ -1,6 +1,6 @@
 import { Activity, GraduationCap, ShieldAlert, TrendingUp } from "lucide-react";
 import { gradePoints } from "@/data/mock";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 export function OverviewCards({ subjects }) {

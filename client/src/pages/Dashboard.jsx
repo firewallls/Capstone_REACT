@@ -1,15 +1,13 @@
-import { Plus, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { OverviewCards } from "@/components/dashboard/OverviewCards";
 import { AttendanceCard } from "@/components/dashboard/AttendanceCard";
 import { MarksCard } from "@/components/dashboard/MarksCard";
-import { PlatformWidget } from "@/components/dashboard/PlatformWidget";
 import { subjects } from "@/data/mock";
 import { useDashboardStore } from "@/store/useDashboardStore";
 import { useEffect } from "react";
 import { Separator } from "@/components/ui/separator";
 
 const Dashboard = () => {
-  const platforms = useDashboardStore((s) => s.platforms);
   const setSelectedSubject = useDashboardStore((s) => s.setSelectedSubject);
 
   useEffect(() => {

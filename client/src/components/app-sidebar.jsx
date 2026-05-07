@@ -18,7 +18,6 @@ import {
     Settings
 } from "lucide-react";
 import { cn } from "@/lib/utils.js";
-import "../../public/icon.svg";
 
 const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/" },
@@ -35,7 +34,7 @@ export function AppSidebar() {
         <Sidebar collapsible="icon" className="border-r border-border/60 bg-sidebar/80 backdrop-blur-xl">
             <SidebarHeader className="flex flex-row items-center gap-3 p-4 h-16 border-b border-border/60">
                 <div className="h-9 w-9 rounded-xl bg-accent grid place-items-center shadow-glow shrink-0">
-                    <img src={"icon.svg"} alt={""} className={"h-4.5 w-4.5 text-primary-foreground"}/>
+                    <img src={"src/assets/icon.svg"} alt={""} className={"h-4.5 w-4.5 text-primary-foreground"}/>
                 </div>
                 <div className="flex flex-col group-data-[collapsible=icon]:hidden">
                     <span className="text-sm font-bold tracking-tight">Study-Flow</span>

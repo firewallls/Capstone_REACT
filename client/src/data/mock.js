@@ -1,3 +1,17 @@
+
+export const filters = [
+    { id: "all", label: "All", cls: "data-[active=true]:bg-primary/15 data-[active=true]:text-primary data-[active=true]:border-primary/30" },
+    { id: "newton", label: "Newton", cls: "data-[active=true]:bg-violet-500/15 data-[active=true]:text-violet-500 data-[active=true]:border-violet-500/30" },
+    { id: "rishiverse", label: "Rishiverse", cls: "data-[active=true]:bg-emerald-500/15 data-[active=true]:text-emerald-500 data-[active=true]:border-emerald-500/30" },
+    { id: "canvas", label: "Canvas", cls: "data-[active=true]:bg-blue-500/15 data-[active=true]:text-blue-500 data-[active=true]:border-blue-500/30" },
+];
+
+export const academic = [
+    { id: "newton", name: "Newton Portal", tag: "Attendance · Marks", desc: "Primary academic record. Auto-synced every 30 min.", status: "connected" },
+    { id: "rishiverse", name: "Rishiverse", tag: "Attendance · Marks · Materials", desc: "Class portal with assignments + grade book.", status: "synced" },
+    { id: "canvas", name: "Canvas LMS", tag: "Materials · Marks", desc: "Lectures, PDFs, video drops and quizzes.", status: "synced" },
+];
+
 export const subjects = [
   { id: "s1", name: "Data Structures", code: "CS201", platform: "newton",
     attended: 38, total: 46, threshold: 75, trend: [82, 80, 78, 81, 83, 82, 84, 82.6],
@@ -40,3 +54,4 @@ export function scoreToGrade(score) {
   if (score >= 50) return "D";
   return "F";
 }
+

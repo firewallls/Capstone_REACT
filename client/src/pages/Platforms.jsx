@@ -3,14 +3,10 @@ import { Boxes, Plus } from "lucide-react";
 import { PlatformWidget } from "@/components/dashboard/PlatformWidget";
 import { PlatformBadge } from "@/components/dashboard/PlatformBadge";
 import { useDashboardStore } from "@/store/useDashboardStore";
-import { subjects } from "@/data/mock";
+import { subjects, academic } from "@/data/mock";
 import { Separator } from "@/components/ui/separator";
 
-const academic = [
-  { id: "newton", name: "Newton Portal", tag: "Attendance · Marks", desc: "Primary academic record. Auto-synced every 30 min.", status: "connected" },
-  { id: "rishiverse", name: "Rishiverse", tag: "Attendance · Marks · Materials", desc: "Class portal with assignments + grade book.", status: "synced" },
-  { id: "canvas", name: "Canvas LMS", tag: "Materials · Marks", desc: "Lectures, PDFs, video drops and quizzes.", status: "synced" },
-];
+
 
 export default function Platforms() {
   useEffect(() => { document.title = "Platforms — Synapse"; }, []);

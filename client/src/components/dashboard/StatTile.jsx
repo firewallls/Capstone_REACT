@@ -2,15 +2,7 @@ import { TrendingDown, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-export function StatTile({ label, value, sub, accent, trend }) {
-  const accentMap = {
-    primary: "text-primary bg-primary/10",
-    safe: "text-emerald-500 bg-emerald-500/10",
-    warning: "text-amber-500 bg-amber-500/10",
-    critical: "text-destructive bg-destructive/10",
-    rishiverse: "text-emerald-500 bg-emerald-500/10",
-  };
-
+export function StatTile({ label, value, sub, trend }) {
   return (
     <Card className="relative overflow-hidden border border-border shadow-sm transition-all hover:shadow-md">
       <CardContent className="pt-5">
